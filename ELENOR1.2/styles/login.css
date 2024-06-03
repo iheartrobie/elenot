@@ -1,0 +1,129 @@
+@keyframes errorAnim {
+    0% {
+        color: yellow;
+    }
+    100% {
+        color: #867200;
+    }
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0;
+}
+
+body {
+    background-color: #0d4675;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+    height: 50px;
+    width: 45%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    font-size: 1.2rem;
+    padding-left: 50px;
+    transition: .2s;
+}
+    input[type="text"]:focus, input[type="password"]:focus{
+        transform: scale(1.1);
+    }
+
+input[type="text"] {
+    background-image: url(imgs/user.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+input[type="password"] {
+    background-image: url(imgs/pass.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+input[type="submit"] {
+    font-size: 1.2rem;
+    background-color: #105b99;
+    border-radius: 12px;
+    height: 50px;
+    width: 15%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s;
+}
+    input[type="submit"]:hover{
+        box-shadow: 0px 0px 20px #b6b616;
+    }
+
+.showForm {
+    height: 55px;
+    width: 20%;
+    background-color: transparent;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+    .showForm:hover {
+        color: #b6b616;
+    }
+
+.signupForm .flex1 {
+    width: 80%;
+}
+
+.signupForm .flex2 {
+    width: 25%;
+    margin-top: 150px;
+    padding-right: 150px;
+}
+
+.signupForm .flex-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.error {
+    animation: errorAnim 1.5s alternate infinite;
+    font-size: 1.2rem;
+}
+
+.flex2 .imagePreview {
+    box-shadow: 0px 0px 5px black;
+    height: 200px;
+    width: 75%;
+    border: 3px solid #105b99;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.flex2 .imagePreview img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: none; /* Initially hidden */
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    width: 55%;
+    height: 50px;
+    border-radius: 12px;
+    background-color: #105b99;
+    transition: 1s;
+    cursor: pointer;
+  }

@@ -1,0 +1,570 @@
+@keyframes modalAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+@keyframes menuAnim {
+    0% {
+        box-shadow: 0px 0px 10px white;
+    }
+    100% {
+        box-shadow: 0px 0px 20px white;
+    }
+}
+
+@keyframes settingsAnim {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+::-webkit-scrollbar {
+    background-color: #0d4675;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b6b616;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0;
+}
+
+body {
+    background-color: #0d4675;
+}
+
+.navbar {
+    display: flex;
+    height: 45px;
+    padding: 10px 50px  10px 50px;
+    line-height: 40px;
+    background-color: #b6b616;
+}
+
+.navbar button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.adminPic {
+    cursor: default;
+    object-fit: cover;
+    pointer-events: none;
+    width: 270px;
+    height: 255px;
+    border-radius: 12px;
+    border: 4px solid #b6b616;
+    box-shadow: 0px 0px 10px black;
+    padding: 10px;
+    position: relative;
+}
+
+.adminPic img {
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.adminPic p {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.navbar button:hover {
+    animation: settingsAnim 1s ease 0s 1 normal forwards;
+}
+
+.navbar button img {
+    height: 30px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(4, .5fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%,-54%);
+    height: 500px;
+    width: 90%;
+    padding: 50px;
+    border: 4px solid white;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #105b99;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+}
+
+.adminSettings .second input[type="password"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    transition: width .5s;
+}
+    .adminSettings .second input[type="password"]:focus {
+        width: 90%;
+        border-bottom: 2px solid #b6b616;
+    }
+
+
+.adminSettings .second input[type="submit"] {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: #0d4675;
+    height: 50px;
+    width: 70%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.adminSettings span {
+    height: 180px;
+}
+
+.adminSettings .second form{
+    padding-left: 50px;
+}
+
+.adminSettings .third button img{
+    vertical-align: middle;
+}
+
+.adminSettings .third button, .adminSettings .second input[type="submit"]{
+    transition: .2s;
+}
+
+.adminSettings .third .uploadPhoto {
+    background-color: #0d4675;
+    border: none;
+    outline: transparent;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: .2s;
+}
+
+.adminSettings .third label {
+    font-size: 1.5rem;
+}
+
+.adminSettings .third .uploadPhoto:hover {
+    background-color: #b6b616;
+}
+
+.adminSettings .second input[type="submit"]:hover{
+    background-color: #b6b616;
+}
+
+.adminSettings .third button:hover {
+    background-color: #9c2727;
+}
+
+.adminSettings .logoutBtn {
+    background-color: #0d4675;
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.menu a:not(.adminPic){
+    border-radius: 10px;
+    height: 200px;
+    width: 80%;
+    background-color: #0666b4;
+    transition: .3s;
+}
+
+.menu a:hover:not(.adminPic){
+    z-index: 2;
+    transform: scale(1.1);
+    animation: menuAnim .5s alternate infinite;
+}
+
+.adminSettings {
+    height: 500px;
+    width: 45%;
+    background-color: #0666b4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.adminSettings::-webkit-scrollbar {
+    background-color: #105b99;
+    border-radius: 10px;
+}
+.adminSettings::-webkit-scrollbar-thumb {
+    background-color: #b6b616;
+    border-radius: 12px;
+}
+
+.menu img:not(.adminPic img){
+    padding: 25px;
+    height: 100px;
+    width: 100px;
+}
+
+.settings-content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr .5fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 50px;
+}
+
+.settings-content button{
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #105b99;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    width: 55%;
+    height: 50px;
+    border-radius: 12px;
+    background-color: #105b99;
+    transition: .2s;
+    cursor: pointer;
+}
+    input[type="file"]::file-selector-button:hover {
+        color: white;
+    }
+
+.adminSettings img {
+    border-radius: 10px;
+}
+
+#closeSettings {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    padding-right: 15px;
+    float: right;
+    cursor: pointer;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+#backButton {
+    margin: 25px;
+    height: 50px;
+    width: 10%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+#backButton:hover {
+    transform: scale(1.1);
+}
+
+.usersTable h1{
+    margin-left: 50px;
+}
+
+.usersTable h2 {
+    margin-left: 50px;
+}
+
+.usersTable .addUser {
+    margin-left: 100px;
+}
+
+.usersTable .addUser input[type="text"], input[type="password"] {
+    height: 50px;
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #b6b616;
+}
+
+ table {
+    width: 85%;
+    margin-left: 100px;
+    margin-right: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+ th, td {
+    border: 4px solid white;
+    text-align: left;
+    padding: 8px;
+    overflow: hidden;
+}
+
+ th {
+    background-color: #0d4675;
+}
+
+ td img {
+    height: 100px;
+    width: 100px;
+}
+
+.modal:not(.addModal){
+    font-size: 1.2rem;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0666b4;
+}
+
+.addModal {
+    font-size: 1.2rem;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #0666b4;
+}
+
+.addModal .modal-content {
+    background-color: #0666b4;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 600px;
+    border-radius: 12px;
+    background-color: transparent;
+}
+
+.addModal input[type="submit"] {
+    height: 50px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #0d4675;
+}
+
+.addModal input[type="submit"]:hover {
+    background-color: #105b99;
+}
+
+.modal input[type="text"] {
+    height: 30px;
+    width: 70%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid #b6b616;
+}
+.modal input[type="number"] {
+    height: 30px;
+    width: 5%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 4px solid #b6b616;
+}
+
+.modal .savechangeBtn {
+    height: 50px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #0666b4;
+}
+
+.modal .savechangeBtn:hover {
+    background-color: #105b99;
+}
+
+.modal-content {
+    background-color: #0666b4;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 350px;
+    border-radius: 12px;
+    background-color: transparent;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ .editUserModal, .deleteUserModal{
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.editUserModal {
+    background-color: #b6b616;
+}
+.editUserModal:hover {
+    background-color: #929212;
+}
+
+.deleteUserModal {
+    background-color: #9c2727;
+}
+.deleteUserModal:hover{
+    background-color: #811f1f;
+}
+
+.delUserBtn, .closedelUserBtn {
+    height: 50px;
+    width: 20%;
+    background-color: #0d4675;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+.delUserBtn:hover, 
+.closedelUserBtn:hover {
+    background-color: #811f1f;
+}
+
+.usersTableHead {
+    display: flex;
+}
+
+.modal-opened {
+    animation: modalAnim 0.5s; /* Apply the animation only when the modal has the 'modal-opened' class */
+}
+
+#addUserButton {
+    height: 50px;
+    width: 10%;
+    background-color: #b6b616;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#addUserButton:hover {
+    background-color: #929212;
+}
